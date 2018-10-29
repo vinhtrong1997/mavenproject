@@ -1,0 +1,49 @@
+/* 
+    Created on : Aug 23, 2018, 10:31:42 PM
+    Author     : Ngo Quang Trong
+*/
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    margin-top: 50px;
+    min-height: 400px;
+}
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.cardServices {
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.containerTwo {
+    padding: 10px;
+}
+
+.content-title {
+    border-bottom: 5px solid #FCB71E;
+}
+
+.news-content {
+    margin-top: 15px;
+}
+
+.video-content {
+    max-width: 100%;
+    display: block;
+}
+
+footer{
+    text-align:center;
+    font-size: 20px;
+    background: #FCB71E;
+    width: 100%;
+    margin-top: 20px;
+    padding:10px;
+}
