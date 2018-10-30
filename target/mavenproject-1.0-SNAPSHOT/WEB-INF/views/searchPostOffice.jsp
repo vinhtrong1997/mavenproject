@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:include page="/WEB-INF/layouts/Header.jsp"></jsp:include>
     <section id="main">
         <br>
@@ -20,40 +21,33 @@
                         <div class="row search-box p-3 mb-2 bg-info text-light">
                             <div class="col-sm-6 col-left">
                                 <label>Tỉnh/Thành phố</label>
-                                <select name="CityName" id="CityName" class="form-control">
-                                    <option selected="selected" value=""></option>
-                                    <option value="">An Giang </option>
-                                    <option value="">Bà Rịa Vũng Tàu  </option> 
+                                <select name="cityID" id="citySelector" class="form-control">
+                                    <option value="">Select city</option>
+                                    <c:forEach items="${listCity}" var="city">
+                                        <option value="${city.cityID}">${city.cityName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
 
                             <div class="col-sm-6 col-left col-right">
                                 <label>Quận/Huyện</label>
-                                <select name="QuanHuyen" id="QuanHuyen" class="form-control">
-                                    <option value="">Up to City Name</option>
+                                <select name="districtID" id="districtSelector" class="form-control">
+                                    <option value="">Select district</option>
                                 </select>
                             </div>
 
                             <div class="col-sm-6 col-left">
                                 <label>Tìm dịch vụ</label>
-                                <select name="timDichVu" id="timDichVu" class="form-control">
+                                <select name="serviceID" class="form-control">
                                     <!-- sẽ thay đổi dựa vào các loại dịch vụ mình tiến hành làm -->
                                     <option selected="selected" value=""></option> 
                                     <option value="C">Bưu kiện trong nước</option>
-                                    <option value="R">Bưu phẩm bảo đảm</option>
-                                    <option value="D">Bưu phẩm không địa chỉ</option>
-                                    <option value="T">Bưu phẩm thường</option>
-                                    <option value="C">Bưu phẩm, Bưu kiện Quốc tế</option>  
-                                    <option value="E">Chuyển phát nhanh EMS</option>
-                                    <option value="PAY">Chuyển tiền Quốc tế qua Bưu điện</option>      
-                                    <option value="HNQT">Vận chuyển hàng nặng quốc tế</option>
-                                    <option value="Q">VN Quick Post</option> 
                                 </select>
                             </div>
 
                             <div class="col-sm-2 col-right col-left">
                                 <label>Tìm Kiếm</label><br/>
-                                <input type="button" value="Tìm" class="btn btn-warning text-light" onclick="searchPostOffice()"> <!-- chưa làm onclick -->
+                                <input type="button" value="Tìm kiếm" class="btn btn-warning text-light" onclick="searchPostOffice()"> <!-- chưa làm onclick -->
                             </div>
                         </div>  
 

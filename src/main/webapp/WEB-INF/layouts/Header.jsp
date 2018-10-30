@@ -13,6 +13,7 @@
         <title>VN POST</title>
         <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
         <script src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script src="dist/js/jsLocationHelper.js"></script>
         <link rel="stylesheet" href="webjars/bootstrap/4.1.3/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="dist/css/all.css" />
     </head>
