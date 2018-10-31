@@ -14,7 +14,7 @@ public class District {
     }
 
     public District(String districID, String districtName, String cityID) {
-        this.districID = districID;
+        this.districID = districID.trim();
         this.districtName = districtName;
         this.cityID = cityID;
     }
@@ -24,7 +24,7 @@ public class District {
     }
 
     public void setDistricID(String districID) {
-        this.districID = districID;
+        this.districID = districID.trim();
     }
 
     public String getDistrictName() {

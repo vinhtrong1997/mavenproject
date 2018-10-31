@@ -13,7 +13,7 @@ public class NationalCity {
     }
 
     public NationalCity(String cityID, String cityName) {
-        this.cityID = cityID;
+        this.cityID = cityID.trim();
         this.cityName = cityName;
     }
 
@@ -22,7 +22,7 @@ public class NationalCity {
     }
 
     public void setCityID(String cityID) {
-        this.cityID = cityID;
+        this.cityID = cityID.trim();
     }
 
     public String getCityName() {

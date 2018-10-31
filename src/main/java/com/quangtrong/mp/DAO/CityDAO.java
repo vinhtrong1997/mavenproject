@@ -2,7 +2,6 @@ package com.quangtrong.mp.DAO;
 
 import com.quangtrong.mp.mapper.CityMapper;
 import com.quangtrong.mp.mapper.DistrictMapper;
-import com.quangtrong.mp.mapper.UserMapper;
 import com.quangtrong.mp.model.District;
 import com.quangtrong.mp.model.NationalCity;
 import java.util.List;
@@ -35,9 +34,9 @@ public class CityDAO extends JdbcDaoSupport{
         String sql = "SELECT * FROM tblDistrict district"
                 + " INNER JOIN tblNationalCity city"
                 + " ON district.cityID = city.cityID"
-                + " WHERE districtID = ?";
+                + " WHERE district.cityID= ?";
         DistrictMapper mapper = new DistrictMapper();
-        Object[] params = new Object[]{cityID};
+        Object[] params = new Object[]{cityID.trim()};
         List<District> list = this.getJdbcTemplate().query(sql, mapper,params);
         return list;
     }

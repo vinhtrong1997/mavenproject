@@ -10,11 +10,16 @@ $(document).ready(function(){
             success: function(respone){
                 var $district = $('#districtSelector');
                 $district.find('option').remove();
-                $.each(respone, function(key,value){
-                    $('<option>').val(key).text(value).appendTo($district);
+                json = JSON.stringify(respone);
+                console.log(json);
+                
+                $.each(JSON.parse(json), function(key,value){
+                   var option = new Option(value.districtName, value.districID);
+                   $district.append($(option));
                 });
             }
         });
+        
     });
     
 });

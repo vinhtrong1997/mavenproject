@@ -15,7 +15,7 @@ public class Services {
     }
 
     public Services(String serviceID, String serviceName, Float serviceFee, String scopeID) {
-        this.serviceID = serviceID;
+        this.serviceID = serviceID.trim();
         this.serviceName = serviceName;
         this.serviceFee = serviceFee;
         this.scopeID = scopeID;
@@ -26,7 +26,7 @@ public class Services {
     }
 
     public void setServiceID(String serviceID) {
-        this.serviceID = serviceID;
+        this.serviceID = serviceID.trim();
     }
 
     public String getServiceName() {

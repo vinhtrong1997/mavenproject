@@ -13,7 +13,7 @@
         <div style="padding:20px;">
             <div class="row">
                 <div class="col-md-6">
-
+                    
                 </div>
                 <div class="col-md-6">
                     <div class="container">
@@ -39,9 +39,9 @@
                             <div class="col-sm-6 col-left">
                                 <label>Tìm dịch vụ</label>
                                 <select name="serviceID" class="form-control">
-                                    <!-- sẽ thay đổi dựa vào các loại dịch vụ mình tiến hành làm -->
-                                    <option selected="selected" value=""></option> 
-                                    <option value="C">Bưu kiện trong nước</option>
+                                    <c:forEach items="${listService}" var="service">
+                                        <option value="${service.serviceID}">${service.serviceName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
 
@@ -50,21 +50,20 @@
                                 <input type="button" value="Tìm kiếm" class="btn btn-warning text-light" onclick="searchPostOffice()"> <!-- chưa làm onclick -->
                             </div>
                         </div>  
-
-                        <hr>
-                        <!-- div box thứ hai (cái ở dưới) -->
-                        <div class="row search-box p-3 mb-2 bg-warning text-darkt">
-                            <div class="col-sm-12 col-left">
-                                <label>Danh sách bưu cục</label>
-                                <div class="form-group">
+                    </div>
+                    <hr>
+                    <div class="row search-box p-3 mb-2 bg-warning text-darkt">
+                        <div class="col-sm-12 col-left">
+                            <h5>DANH SÁCH BƯU CỤC</h5>
+                            <hr>
+                            <div class="form-group">
                                     
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div>
-                    </div>
-                </div>
-
-                </section>
+                    
+                <div>
+            </div>
+        </div>   
+    </section>
 <jsp:include page="/WEB-INF/layouts/Footer.jsp"></jsp:include>
