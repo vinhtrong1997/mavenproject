@@ -13,7 +13,7 @@
         <center><h3>_____ ///// _____</h3></center>
         <div class="alert alert-warning" style="margin: 50px">
             <h5>Nhập mã bưu phẩm</h5>
-            <form action="trackingPackage" method="GET">
+            <form action="trackingPackageResult" method="GET">
                 <div class="form-group">
                     <div class="input-group">
                         <input class="form-control form-control-md" name="packageID" type="text">
