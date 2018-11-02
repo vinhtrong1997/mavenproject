@@ -1,0 +1,102 @@
+/* 
+    Created on : Aug 23, 2018, 10:31:42 PM
+    Author     : Ngo Quang Trong
+*/
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    margin-top: 50px;
+    min-height: 490px;
+}
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.cardServices {
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.containerTwo {
+    padding: 10px;
+}
+
+.content-title {
+    border-bottom: 5px solid #FCB71E;
+}
+
+.news-content {
+    margin-top: 15px;
+}
+
+.video-content {
+    max-width: 100%;
+    display: block;
+}
+
+.list-col {
+    margin:50px;
+}
+
+.package-code {
+    border-right: 2px solid;
+}
+
+.package-weight {
+    border-right: 2px solid;
+}
+.list-post {
+    margin-top: 15px;
+    background: #FFFAD5;
+    border: 1px solid #D4CFAC;
+    padding: 10px;
+    margin-right: 0px;
+    font-family: "Roboto-Regular";
+    font-size: 14px;
+}
+
+.list-office {
+    padding: 10px;
+    height: 420px;
+    overflow-y: auto;
+    background: #FFF;
+    border: 1px solid #DDD;
+}
+
+.post-item {
+    display: block;
+    padding-bottom: 5px;
+    position: relative;
+    float: right;
+}
+
+.title-post {
+    font-family: 'Roboto-Medium';
+    font-weight: bold;
+    width: 100px;
+    display: block;
+    float: left;
+}
+
+.tracking-header-info {
+    display: block;
+    border: 1px solid #D4CFAC;
+    background: #FFFAD5;
+    padding: 10px 5px;
+    margin-left: 0px;
+    position: relative;
+    font-family: "Roboto-Regular";
+}
+footer{
+    text-align:center;
+    font-size: 20px;
+    background: #FCB71E;
+    width: 100%;
+    margin-top: 20px;
+    padding:10px;
+}
