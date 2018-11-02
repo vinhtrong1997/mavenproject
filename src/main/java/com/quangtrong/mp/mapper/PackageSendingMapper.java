@@ -28,7 +28,7 @@ public class PackageSendingMapper implements RowMapper<PackageSending>{
         String receiverID = rs.getString("receiverID");
         String srcPostOfficeID = rs.getString("srcPostOfficeID");
         String desPostOfficeID = rs.getString("desPostOfficeID");
-        String statusID = rs.getString("desPostOfficeID");
+        String statusID = rs.getString("statusID");
         String date = rs.getString("date");
         String serviceID = rs.getString("serviceID");
         float tFee = rs.getFloat("totalFee");

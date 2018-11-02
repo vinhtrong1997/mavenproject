@@ -1,10 +1,12 @@
 package com.quangtrong.mp.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Q
  */
-public class PackageSending {
+public class PackageSending implements Serializable{
     
     private String packageID;
     private Float weight;

@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @author TrongNQ
  */
 @Configuration
-@ComponentScan(basePackages = {"com.quangtrong"})
+@ComponentScan(basePackages = {"com.quangtrong.mp"})
 
 @EnableTransactionManagement
 // load to Evironment

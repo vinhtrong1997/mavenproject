@@ -94,20 +94,6 @@
             <version>4.3.1.Final</version>
         </dependency>
         
-        <!-- @Inject -->
-        <dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
-            <version>1</version>
-        </dependency>
-        
-        <!-- AspectJ -->
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>1.9.1</version>
-        </dependency>
-        
         <!--  Gson: Java to Json conversion -->
         <dependency>
           <groupId>com.google.code.gson</groupId>

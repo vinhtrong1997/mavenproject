@@ -37,3 +37,33 @@ function searchPostOffice() {
 }
 
 
+function scanQRCode(){
+    var scanner = new Instascan.Scanner({
+        video: document.getElementById("webcam")
+    });
+    
+    scanner.addListener('scan',content => {
+        if(content.length > 0){
+            console.log(content);
+            $.ajax({
+                type: "POST",
+                url: "qrcodeScanner",
+                data: {
+                    packageID: content
+                },
+                success: function(response){
+                    var jsonStr = JSON.stringify(response);
+                    console.log(jsonStr);
+                }
+            })
+        }
+    });
+    
+    Instascan.Camera.getCameras().then(cameras => {
+        if(cameras.length > 0 ){
+            scanner.start(cameras[0])
+        }
+    });
+}
+
+
