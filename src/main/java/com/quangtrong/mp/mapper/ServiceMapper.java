@@ -13,6 +13,7 @@ import org.springframework.jdbc.core.RowMapper;
 public class ServiceMapper implements RowMapper<Services>{
 
     public static final String BASE_SQL = "SELECT * FROM tblServices";
+    
     @Override
     public Services mapRow(ResultSet rs, int i) throws SQLException {
         String serviceID = rs.getString("serviceID");

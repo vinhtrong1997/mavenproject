@@ -11,7 +11,6 @@ $(document).ready(function(){
                 var $district = $('#districtSelector');
                 $district.find('option').remove();
                 json = JSON.stringify(respone);
-                console.log(json);
                 
                 $.each(JSON.parse(json), function(key,value){
                    var option = new Option(value.districtName, value.districID);

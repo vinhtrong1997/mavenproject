@@ -17,7 +17,6 @@ import com.google.gson.JsonElement;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.springframework.ui.Model;
 /**
  *
  * @author NgoQuang

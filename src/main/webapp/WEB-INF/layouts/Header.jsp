@@ -14,6 +14,7 @@
         <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
         <script src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         <script src="dist/js/jsLocationHelper.js"></script>
+        <script src="dist/js/jsFunctions.js"></script>
         <link rel="stylesheet" href="webjars/bootstrap/4.1.3/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="dist/css/all.css" />
     </head>
@@ -39,7 +40,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">Định vị bưu phẩm</a>
+                <a class="nav-link text-white" href="trackingPackage">Định vị bưu phẩm</a>
             </li>
             <li class="nav-item">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">

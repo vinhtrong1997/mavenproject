@@ -10,16 +10,18 @@ public class PostOffice {
     private String staffID;
     private String postOfficeName;
     private String serviceID;
+    private String address;
 
     public PostOffice() {
     }
 
-    public PostOffice(String postOfficeID, String locationID, String staffID, String postOfficeName, String serviceID) {
+    public PostOffice(String postOfficeID, String locationID, String staffID, String postOfficeName, String serviceID, String address) {
         this.postOfficeID = postOfficeID;
         this.locationID = locationID;
         this.staffID = staffID;
         this.postOfficeName = postOfficeName;
         this.serviceID = serviceID;
+        this.address = address;
     }
 
     public String getPostOfficeID() {
@@ -60,6 +62,14 @@ public class PostOffice {
 
     public void setServiceID(String serviceID) {
         this.serviceID = serviceID;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
     
     

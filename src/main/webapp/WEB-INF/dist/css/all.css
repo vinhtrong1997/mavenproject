@@ -39,6 +39,53 @@ body{
     display: block;
 }
 
+.list-col {
+    margin-top: 10px;
+}
+
+
+.list-post {
+    margin-top: 15px;
+    background: #FFFAD5;
+    border: 1px solid #D4CFAC;
+    padding: 10px;
+    margin-right: 0px;
+    font-family: "Roboto-Regular";
+    font-size: 14px;
+}
+
+.list-office {
+    padding: 10px;
+    height: 420px;
+    overflow-y: auto;
+    background: #FFF;
+    border: 1px solid #DDD;
+}
+
+.post-item {
+    display: block;
+    padding-bottom: 5px;
+    position: relative;
+    float: right;
+}
+
+.title-post {
+    font-family: 'Roboto-Medium';
+    font-weight: bold;
+    width: 100px;
+    display: block;
+    float: left;
+}
+
+.tracking-header-info {
+    display: block;
+    border: 1px solid #D4CFAC;
+    background: #FFFAD5;
+    padding: 10px 5px;
+    margin-left: 0px;
+    position: relative;
+    font-family: "Roboto-Regular";
+}
 footer{
     text-align:center;
     font-size: 20px;
