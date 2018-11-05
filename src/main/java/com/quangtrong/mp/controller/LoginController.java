@@ -33,7 +33,7 @@ public class LoginController {
         User user = userDAO.getAnUser(username, password);
         
         if(user != null){
-            return "staff";
+            return "adminPackage";
         }
         return "redirect:/";
     }

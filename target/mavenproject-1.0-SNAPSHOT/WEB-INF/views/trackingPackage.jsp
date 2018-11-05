@@ -12,10 +12,10 @@
         <br>
         <center><h3>ĐỊNH VỊ BƯU PHẨM</h3></center>
         <center><h3>_____ ///// _____</h3></center>
-        <div class="container-fluid">
+        <div class="container-fluid" style="padding:20px;">
             <div class="row">
-                <div class="col-md-8">
-                    <div class="alert alert-warning" style="margin: 50px">
+                <div class="col-md-8" style="padding:10px;">
+                    <div class="alert alert-warning">
                         <h5>Nhập mã bưu phẩm</h5>
                         <form action="trackingPackageResult" method="GET">
                             <div class="form-group">
@@ -27,11 +27,11 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="alert alert-warning" style="margin: 50px">
+                <div class="col-md-4" style="padding:10px;">
+                    <div class="alert alert-warning">
                         <h5>Tìm bằng cách quét QR Code</h5>
                         <center>
-                            <video width="400" id="webcam" poster="dist/images/qr-logo.png">
+                            <video width="250" id="webcam" poster="dist/images/qr-logo.png">
                             
                             </video>
                         </center>
@@ -39,11 +39,6 @@
                         <center><input type="button" class="btn btn-warning" value="Quét Mã" onclick="scanQRCode()"/></center>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="col-sm-12">
             </div>
         </div>
     </section>

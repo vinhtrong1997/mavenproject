@@ -17,6 +17,7 @@
         <script src="dist/js/jsFunctions.js"></script>
         <link rel="stylesheet" href="webjars/bootstrap/4.1.3/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="dist/css/all.css" />
+        <link rel="stylesheet" href="webjars/font-awesome/4.7.0/css/font-awesome.min.css"/>
     </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-warning">
@@ -33,7 +34,7 @@
                       Tra cứu
                     </button>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="">Tra cước dịch vụ</a>
+                      <a class="dropdown-item" href="searchServiceFee">Tra cước dịch vụ</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="searchPostOffice">Tra cứu bưu cục</a>
                     </div>

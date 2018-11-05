@@ -35,5 +35,10 @@ public class PostOfficeDAO extends JdbcDaoSupport{
         return list;
     }
     
-    
+    public PostOffice getOfficeByID(String postOfficeID){
+        String sql = PostOfficeMapper.BASE_SQL + " WHERE postOfficeID = ?";
+        
+        PostOfficeMapper mapper = new PostOfficeMapper();
+        return this.getJdbcTemplate().queryForObject(sql, mapper, postOfficeID);
+    }
 }
