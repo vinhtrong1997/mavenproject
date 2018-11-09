@@ -8,17 +8,17 @@ public class Receiver {
     private String receiverID;
     private String fullname;
     private String mobilePhone;
-    private String locationID;
+    private String address;
     private String CMNDNo;
 
     public Receiver() {
     }
 
-    public Receiver(String receiverID, String fullname, String mobilePhone, String locationID, String CMNDNo) {
+    public Receiver(String receiverID, String fullname, String mobilePhone, String address, String CMNDNo) {
         this.receiverID = receiverID;
         this.fullname = fullname;
         this.mobilePhone = mobilePhone;
-        this.locationID = locationID;
+        this.address = address;
         this.CMNDNo = CMNDNo;
     }
 
@@ -46,13 +46,15 @@ public class Receiver {
         this.mobilePhone = mobilePhone;
     }
 
-    public String getLocationID() {
-        return locationID;
+    public String getAddress() {
+        return address;
     }
 
-    public void setLocationID(String locationID) {
-        this.locationID = locationID;
+    public void setAddress(String address) {
+        this.address = address;
     }
+
+    
 
     public String getCMNDNo() {
         return CMNDNo;

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -25,5 +26,22 @@ public class TrackingDAO extends JdbcDaoSupport{
         TrackingMapper mapper = new TrackingMapper();
         return this.getJdbcTemplate().query(sql, mapper, params);
     }
+    
+    public int getLastID(){
+        String sql = "SELECT MAX(trackingID) AS 'trackingID' FROM tblTracking";
+        SqlRowSet queryForRowSet = this.getJdbcTemplate().queryForRowSet(sql);
+        while(queryForRowSet.next()){
+            return queryForRowSet.getInt("trackingID");
+        }
+        return 100000;
+    }
+    
+    
+    public void insert(Tracking tracking){
+        String sql = "INSERT INTO tblTracking VALUES(?,?,?,?,?)";
+        Object[] params = new Object[]{tracking.getTrackingID(), tracking.getPackageID(), tracking.getDate(), tracking.getPostOfficeID(),tracking.getStatusID()};
+        this.getJdbcTemplate().update(sql, params);
+    }
+    
     
 }

@@ -8,17 +8,17 @@ public class Sender {
     private String senderID;
     private String fullname;
     private String mobilePhone;
-    private String locationID;
+    private String address;
     private String CMNDNo;
 
     public Sender() {
     }
 
-    public Sender(String senderID, String fullname, String mobilePhone, String locationID, String CMNDNo) {
+    public Sender(String senderID, String fullname, String mobilePhone, String address, String CMNDNo) {
         this.senderID = senderID;
         this.fullname = fullname;
         this.mobilePhone = mobilePhone;
-        this.locationID = locationID;
+        this.address = address;
         this.CMNDNo = CMNDNo;
     }
 
@@ -46,13 +46,14 @@ public class Sender {
         this.mobilePhone = mobilePhone;
     }
 
-    public String getLocationID() {
-        return locationID;
+    public String getAddress() {
+        return address;
     }
 
-    public void setLocationID(String locationID) {
-        this.locationID = locationID;
+    public void setAddress(String address) {
+        this.address = address;
     }
+
 
     public String getCMNDNo() {
         return CMNDNo;

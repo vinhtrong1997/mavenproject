@@ -21,7 +21,7 @@
     </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-warning">
-    <a class="navbar-brand" href="">VN Post</a>
+    <a class="navbar-brand" href="/mavenproject">VN Post</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -62,7 +62,7 @@
 <!-- Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-      <form action="login/userLogin.do" method="POST">
+      <form action="dashboard" method="POST">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="loginModalLabel">Đăng nhập</h5>

@@ -40,4 +40,10 @@ public class CityDAO extends JdbcDaoSupport{
         List<District> list = this.getJdbcTemplate().query(sql, mapper,params);
         return list;
     }
+    
+    public NationalCity getByID(String cityID){
+        String sql = "SELECT * FROM tblNationalCity WHERE cityID=?";
+        CityMapper mapper = new CityMapper();
+        return this.getJdbcTemplate().queryForObject(sql, mapper, cityID);
+    }
 }

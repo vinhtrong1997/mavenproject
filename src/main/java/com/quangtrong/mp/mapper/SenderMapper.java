@@ -22,9 +22,9 @@ public class SenderMapper implements RowMapper<Sender>{
         String sID = rs.getString("senderID");
         String fname = rs.getString("fullname");
         String mPhone = rs.getString("mobilePhone");
-        String lId = rs.getString("locationID");
+        String address = rs.getString("address");
         String CMND = rs.getString("CMNDNo");
-        return new Sender(sID, fname, mPhone, lId, CMND);
+        return new Sender(sID, fname, mPhone, address, CMND);
     }
     
 }

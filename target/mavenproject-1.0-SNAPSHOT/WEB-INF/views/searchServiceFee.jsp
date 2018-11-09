@@ -24,7 +24,7 @@
                                         </tr>
                                     </tbody></table>
                             </div>
-                            
+
                             <form action="searchServiceFee" method="POST">
                                 <div class="col-sm-12">
                                     <div class="form-horizontal">
@@ -73,17 +73,18 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
 
                             <div class="col-sm-9 col-sm-offset-3">
                                 <div class="form-actions right1">
                                     <button type="submit" class="btn btn-primary">Tra cứu</button>
                                 </div>
                             </div>
-                        </div>
-                        <hr>
+                        </form>
+                    </div>
+                    <hr>
                         <table class="table-multi-tracking table table-bordered">
-                            <tbody><tr>
+                            <tbody>
+                                <tr>
                                     <th class="bg-info">
                                         STT
                                     </th>
@@ -97,10 +98,27 @@
                                         Thời gian
                                     </th>
                                 </tr>
-
-                            </tbody></table>
+                            <c:if test="${not empty listFee}">
+                                <% int count = 0;%>
+                                <c:forEach items="${listFee}" var="serviceFee">
+                                    <tr>
+                                        <td><%=count++%></td>
+                                        <td><a href="#">${serviceFee.serviceName}</a></td>
+                                        <td>${serviceFee.totalFee} VNĐ</td>
+                                        <c:choose>
+                                            <c:when test="${serviceFee.serviceID == 'SV0001'}">
+                                                <td>Trong ngày</td>
+                                            </c:when>
+                                            <c:otherwise>
+                                              <td></td>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </tr>
+                                </c:forEach>
+                            </c:if>
+                            </tbody>
+                        </table>
                         <hr>
-
                     </div>
                 </div>
             </div>

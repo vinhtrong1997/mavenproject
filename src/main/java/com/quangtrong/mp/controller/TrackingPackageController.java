@@ -99,17 +99,6 @@ public class TrackingPackageController {
         String packageID = request.getParameter("packageID");
         
         PackageSending obj = packageSendingDAO.getPackageByID(packageID);
-        
-//        Gson gson = new Gson();
-//        JsonElement jsonElement = gson.toJsonTree(obj);
-//        response.setContentType("application/json");
-//        response.setCharacterEncoding("UTF-8");
-//        
-//        try {
-//            response.getWriter().println(jsonElement);
-//        } catch (IOException ex) {
-//            Logger.getLogger(LocationController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
         model.addAttribute("packageSending", obj);
         return "trackingPackageResult";
     }

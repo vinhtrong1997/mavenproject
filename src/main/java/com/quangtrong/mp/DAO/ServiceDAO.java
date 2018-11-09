@@ -1,6 +1,7 @@
 package com.quangtrong.mp.DAO;
 
 import com.quangtrong.mp.mapper.*;
+import com.quangtrong.mp.model.ServiceFee;
 import com.quangtrong.mp.model.Services;
 import java.util.List;
 import javax.sql.DataSource;
@@ -21,6 +22,17 @@ public class ServiceDAO extends JdbcDaoSupport{
         ServiceMapper mapper = new ServiceMapper();
         
         List<Services> list = this.getJdbcTemplate().query(sql, mapper);
+        return list;
+    }
+    
+    public List<ServiceFee> getServicesFee(){
+        String sql = "SELECT * FROM tblServices INNER JOIN tblScope"
+                + " ON tblServices.scopeID = tblScope.scopeID"
+                + " INNER JOIN tblShippingMethod"
+                + " ON tblShippingMethod.shippingMethodID = tblScope.shippingMethodID";
+        ServiceFeeMapper mapper = new ServiceFeeMapper();
+        
+        List<ServiceFee> list = this.getJdbcTemplate().query(sql, mapper);
         return list;
     }
     

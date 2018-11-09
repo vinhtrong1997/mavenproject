@@ -26,9 +26,9 @@ public class PostOfficeDAO extends JdbcDaoSupport{
         String sql = PostOfficeMapper.BASE_SQL + " WHERE tblPostOffice.locationID IN"
                 + " ( SELECT locationID FROM tblLocation WHERE tblLocation.cityID IN "
                 + " ( SELECT tblDistrict.cityID from tblDistrict INNER JOIN tblNationalCity ON tblDistrict.cityID = tblNationalCity.cityID"
-                + "  WHERE tblDistrict.districtID = ? AND tblDistrict.cityID = ?)) AND tblPostOffice.serviceID = ?";
+                + "  WHERE tblDistrict.districtID = ? AND tblDistrict.cityID = ?))";
         
-        Object[] params = new Object[]{districtID, cityID, serviceID};
+        Object[] params = new Object[]{districtID, cityID};
         PostOfficeMapper mapper = new PostOfficeMapper();
         List<PostOffice> list = this.getJdbcTemplate().query(sql, mapper, params);
         
@@ -40,5 +40,11 @@ public class PostOfficeDAO extends JdbcDaoSupport{
         
         PostOfficeMapper mapper = new PostOfficeMapper();
         return this.getJdbcTemplate().queryForObject(sql, mapper, postOfficeID);
+    }
+    
+    public PostOffice getOfficeByStaff(String staffID){
+        String sql = PostOfficeMapper.BASE_SQL + " WHERE staffID = ?";
+        PostOfficeMapper mapper = new PostOfficeMapper();
+        return this.getJdbcTemplate().queryForObject(sql, mapper, staffID);
     }
 }
