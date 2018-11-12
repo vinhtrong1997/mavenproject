@@ -50,8 +50,13 @@ public class PackageSendingDAO extends JdbcDaoSupport{
         String sql = "INSERT INTO tblPackageSending VALUES(?,?,?,?,?,?,?,?,?,?)";
         int[] types = new int[]{Types.NCHAR, Types.FLOAT, Types.NCHAR,Types.NCHAR,Types.NCHAR,Types.NCHAR,Types.NCHAR,Types.TIMESTAMP,Types.NCHAR,Types.FLOAT};
         Object[] params = new Object[]{packageSending.getPackageID(),packageSending.getWeight(),packageSending.getSenderID(),packageSending.getReceiverID(),packageSending.getSrcPostOfficeID(),packageSending.getDesPostOfficeID(),packageSending.getStatusID(),packageSending.getDate(),packageSending.getServiceID(),packageSending.getTotalFee()};
-        
         this.getJdbcTemplate().update(sql, params);
     
+    }
+    
+    public void update(String statusID, String packageID){
+        String sql = "UPDATE tblPackageSending SET statusID=? WHERE packageID=?";
+        Object[] params = new Object[]{statusID,packageID};
+        this.getJdbcTemplate().update(sql, params);
     }
 }

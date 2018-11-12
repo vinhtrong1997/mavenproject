@@ -21,6 +21,13 @@ public class PostOfficeDAO extends JdbcDaoSupport{
         this.setDataSource(dataSource);
     }
     
+    public List<PostOffice> listAllPO(){
+        String sql = PostOfficeMapper.BASE_SQL;
+        PostOfficeMapper mapper = new PostOfficeMapper();
+        List<PostOffice> list = this.getJdbcTemplate().query(sql, mapper);
+        return list;
+    }
+    
     public List<PostOffice> searchPostOffice(String serviceID, String cityID, String districtID){
         
         String sql = PostOfficeMapper.BASE_SQL + " WHERE tblPostOffice.locationID IN"

@@ -204,12 +204,41 @@ function scanQRCodeDAPackage(){
     scanner.addListener('scan',content => {
         if(content.length > 0){
             console.log(content);
+            departurePackageFV(content);
         }
     });
     
     Instascan.Camera.getCameras().then(cameras => {
         if(cameras.length > 0 ){
             scanner.start(cameras[0])
+        }
+    });
+}
+
+function departurePackageFV(id){
+    $.ajax({
+        type: "POST",
+        url: "viewDetail",
+        data: {
+            packageID: id
+        },
+        success: function (response){
+            jsonString = JSON.stringify(response);
+            jsonResult = JSON.parse(jsonString);
+            console.log(jsonResult);
+            $('#senderName').val(jsonResult[1].fullname);
+            $('#senderAddress').val(jsonResult[1].address);
+            $('#senderPhone').val(jsonResult[1].mobilePhone);
+            
+            $('#receiverName').val(jsonResult[2].fullname);
+            $('#receiverAddress').val(jsonResult[2].address);
+            $('#receiverPhone').val(jsonResult[2].mobilePhone);
+            
+            $('#packageID').val(jsonResult[0].packageID);
+            $('#weight').val(jsonResult[0].weight);
+            $('#srcPO').val(jsonResult[3].postOfficeName);
+            $('#date').val(jsonResult[0].date);
+            $('#totalFee').val(jsonResult[0].totalFee + " VNĐ");
         }
     });
 }

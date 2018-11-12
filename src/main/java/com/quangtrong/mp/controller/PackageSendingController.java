@@ -126,6 +126,7 @@ public class PackageSendingController {
             
             List<Services> list2 = serviceDAO.getServices();
             
+            List<PostOffice> list3  = postOfficeDAO.listAllPO();
             
             if(control.compareTo("addPackage")==0){
                 model.addAttribute("pageTitle", "QL Bưu phẩm");
@@ -137,13 +138,14 @@ public class PackageSendingController {
             
             if(control.compareTo("departurePackage")==0)
             {
-                model.addAttribute("pageTitle", "QL Bưu phẩm");
+                model.addAttribute("pageTitle", "QL Bưu phẩm đi");
+                model.addAttribute("listPO", list3);
                 return "departurePackage";
             }
 
             if(control.compareTo("arrivalPackage")==0)
             {
-                model.addAttribute("pageTitle", "QL Bưu phẩm");
+                model.addAttribute("pageTitle", "QL Bưu phẩm đến");
                 return "arrivalPackage";
             }
 
@@ -161,6 +163,12 @@ public class PackageSendingController {
             Logger.getLogger(PackageSendingController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        Calendar cal = Calendar.getInstance();
+        Date date = cal.getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        
+        PostOffice currentPO = (PostOffice) request.getSession().getAttribute("postOffice");
+        
         String control = request.getParameter("control");
         if(control.compareTo("addPackage")==0){
             int senderID = senderDAO.getLastID()+1;
@@ -176,13 +184,13 @@ public class PackageSendingController {
             String desPO = request.getParameter("desPostOffice");
             String srcPO = request.getParameter("srcPostOffice");
             
-            String recieverName = request.getParameter("senderName");
+            String recieverName = request.getParameter("recieverName");
             String recieverCityID = request.getParameter("cityTo");
             String recieverDistrictID = request.getParameter("districtTo");
             NationalCity recieverCity = cityDAO.getByID(recieverCityID.trim());
             District recieverDistrict = districtDAO.getByID(recieverDistrictID.trim());
-            String recieverAddress = request.getParameter("senderAddress")+","+recieverDistrict.getDistrictName()+","+recieverCity.getCityName();
-            String recieverPhone = request.getParameter("senderPhone");
+            String recieverAddress = request.getParameter("recieverAddress")+","+recieverDistrict.getDistrictName()+","+recieverCity.getCityName();
+            String recieverPhone = request.getParameter("recieverPhone");
             
             String weight = request.getParameter("weight");
 
@@ -199,9 +207,7 @@ public class PackageSendingController {
             
             senderDAO.insert(sender);
             receiverDAO.insert(receiver);
-            Calendar cal = Calendar.getInstance();
-            Date date = cal.getTime();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            
             PackageSending packageSending = new PackageSending(packageID, Float.parseFloat(weight), String.valueOf(senderID), String.valueOf(recieverID), srcPO, desPO, "STA1001" , sdf.format(date), service, Float.parseFloat(totalFee));
             
             packageSendingDAO.insert(packageSending);
@@ -218,6 +224,49 @@ public class PackageSendingController {
             return "managePackage";
         }
         
+        
+        if(control.compareTo("departurePackage")==0){
+            String nextOffice = request.getParameter("nextOffice");
+            String packageID = request.getParameter("packageID");
+            int trackingID = trackingDAO.getLastID()+1;
+            date = cal.getTime();
+            Tracking tracking = new Tracking(String.valueOf(trackingID), packageID,sdf.format(date), currentPO.getPostOfficeID(), "STA1002" ,"");
+            trackingDAO.insert(tracking);
+            
+            cal.add(Calendar.MINUTE, 10);
+            date = cal.getTime();
+            Tracking tracking1 = new Tracking(String.valueOf(trackingID+1), packageID,sdf.format(date),nextOffice, "STA1007" ,"");
+            trackingDAO.insert(tracking1);
+            
+            packageSendingDAO.update("STA1007", packageID);
+            
+            model.addAttribute("notification", "Xác nhận bưu phẩm thành công");
+            return "departurePackage";
+        }
+        
+        if(control.compareTo("arrivalPackage")==0){
+            String packageID = request.getParameter("packageID");
+            
+            PackageSending packageSending = packageSendingDAO.getPackageByID(packageID);
+            int trackingID = trackingDAO.getLastID()+1;
+            
+            cal.add(Calendar.MINUTE, 11);
+            date = cal.getTime();
+            
+            if(packageSending.getDesPostOfficeID().trim().compareTo(currentPO.getPostOfficeID().trim())==0){
+                Tracking tracking = new Tracking(String.valueOf(trackingID), packageID,sdf.format(date), currentPO.getPostOfficeID(), "STA1006" ,"");
+                trackingDAO.insert(tracking);
+                packageSendingDAO.update("STA1006", packageID);
+            }
+            else {
+                Tracking tracking = new Tracking(String.valueOf(trackingID), packageID,sdf.format(date), currentPO.getPostOfficeID(), "STA1003" ,"");
+                trackingDAO.insert(tracking);
+                packageSendingDAO.update("STA1003", packageID);
+            }
+            
+            model.addAttribute("notification", "Xác nhận bưu phẩm đến thành công!");
+            return "arrivalPackage";
+        }
         return "redirect:/";
     }
 }

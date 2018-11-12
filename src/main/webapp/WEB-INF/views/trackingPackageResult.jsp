@@ -76,13 +76,13 @@
                                 <label><i class="fa fa-bus"></i><strong> Bưu cục nhận: </strong></label>
                             </div>
                             <div class="col-sm-3">
-                                <label>${packageSending.destinatiOffice}</label>
+                                <label>${packageSending.sourceOffice}</label>
                             </div>
                             <div class="col-sm-3">
                                 <label><i class="fa fa-bus"></i><strong> Bưu cục phát: </strong></label>
                             </div>
                             <div class="col-sm-3">
-                                <label>${packageSending.sourceOffice}</label>
+                                <label>${packageSending.destinatiOffice}</label>
                             </div>
                         </div>
                     </div>        
@@ -127,6 +127,7 @@
                                                         <strong>Bưu cục: ${trackingResult.postOfficeID}</strong>
                                                         <br>
                                                         <strong>Địa chỉ: </strong> ${trackingResult.postOfficeAddress}
+                                                        <br>
                                                         <strong>Trạng thái: </strong> ${trackingResult.status}
                                                     </p>
                                                 </div>
