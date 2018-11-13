@@ -1,16 +1,4 @@
 ﻿# vnpost
-
-I UPLOAD SOURCE CODE IN GITHUB BECASE THE FILE SIZE TOO LONG AND I CAN NOT UPLOAT IT TO CMS.FPT.EDU.VN
-LIKE GITHUB: https://github.com/vinhtrong1997/mavenproject.git
-
-
-Group 5
-1. Ngô Quang Trọng SE04542 - Leader - All functions back-end development.
-2. Nguyễn Nam Anh - Font-end development.
-3. Phùng Trí Đức SE05234 - Create demo data for database.
-4. Bùi Văn Tuấn SE05634 - Font-end development.
-5. Nguyễn Trung Hải SE06350 - Code entity and DAO classes.
-
 ================== Install guideline ========================
 STEP1 : Before, you create database with database name is "PRJ321_PROJECT".
 STEP2: Use databaseScript.sql for generate database, file databaseScript.sql in folder "database" on source folder.
