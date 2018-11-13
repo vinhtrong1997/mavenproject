@@ -4,6 +4,7 @@ import com.quangtrong.mp.DAO.PostOfficeDAO;
 import com.quangtrong.mp.DAO.UserDAO;
 import com.quangtrong.mp.model.PostOffice;
 import com.quangtrong.mp.model.User;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -61,6 +62,21 @@ public class UserController {
             return "redirect:/";
         }
     }
+    
+    @RequestMapping(value = "/manageUsers", method = RequestMethod.GET)
+    public String manageUsers(Model model, HttpServletRequest request) {
+        User user = (User) request.getSession().getAttribute("userSession");
+        if (user != null) {
+            List<User> list = userDAO.listUser();
+            request.setAttribute("listUser", list);
+            request.setAttribute("totalPage", 15);
+            model.addAttribute("pageTitle", "QL Users");
+            return "manageUsers";
+        } else {
+            return "redirect:/";
+        }
+    }
+    
     
     @RequestMapping(value="/logout", method=RequestMethod.GET)
     public String logout(HttpServletRequest request){

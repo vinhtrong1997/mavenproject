@@ -8,6 +8,9 @@
 <jsp:include page="/WEB-INF/layouts/adminHeader.jsp"></jsp:include>
     <script src="dist/js/jsFunctions.js"></script>
     <script src="dist/js/qrcode.min.js"></script>
+    <link rel="stylesheet" href="webjars/datatables/1.10.16/media/css/dataTables.bootstrap4.min.css">
+    <script src="webjars/datatables/1.10.16/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="webjars/datatables/1.10.16/media/js/dataTables.bootstrap4.min.js" type="text/javascript"></script>
     <section id="BreadCrumb">
         <div class="container">
             <ol class="breadcrumb">
@@ -37,7 +40,7 @@
                             <h3 class="panel-title">Danh sách bưu phẩm</h3>
                         </div>
                         <div class="panel-body dash-box">
-                            <table class="table table-striped table-hover">
+                            <table class="table table-striped table-hover" id="myTable">
                                 <thead>
                                     <tr>
                                         <th>Mã bưu phẩm</th>
@@ -123,4 +126,9 @@
         </div>
     </div>
 </section>
+<script>
+    $(document).ready(function(){
+        $('#myTable').DataTable();
+    });
+</script>
 <jsp:include page="/WEB-INF/layouts/adminFooter.jsp"></jsp:include>

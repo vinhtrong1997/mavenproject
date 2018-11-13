@@ -27,23 +27,10 @@
                             Dashborad
                         </a>
                         <a href="managePackage" class="list-group-item"><span class="fa fa-address-card" area-hidden="true"></span> QL Bưu Phẩm</a>
-                        <a href="#" class="list-group-item"><span class="fa fa-building" area-hidden="true"></span> QL Bưu Cục</a>
-                        <a href="#" class="list-group-item"><span class="fa fa-users" area-hidden="true"></span>  QL User</a>
+                        <a href="managePostOffice" class="list-group-item"><span class="fa fa-building" area-hidden="true"></span> QL Bưu Cục</a>
+                        <a href="manageUsers" class="list-group-item"><span class="fa fa-users" area-hidden="true"></span>  QL User</a>
                     </div>
-                    <div class="well">
-                        <h4>Disk Used</h4>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                <span class="sr-only">40% Complete (success)</span>
-                            </div>
-                        </div>
-                        <h4>Bandwidth Used</h4>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                <span class="sr-only">20% Complete</span>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="col-md-9">
                     <div class="panel panel-default">
@@ -77,20 +64,20 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Thống kê</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <canvas id="pie-chart" width="800" height="450"></canvas>
-                                </div>
-                            </div>
-                            <br><br><hr>
-                            <canvas id="line-chart" width="800" height="450"></canvas>
-                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Thống kê</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-6">
+                        <canvas id="pie-chart" width="800" height="450"></canvas>
+                    </div>
+                    <div class="col-md-6">
+                        <canvas id="line-chart" width="800" height="450"></canvas>
                     </div>
                 </div>
             </div>

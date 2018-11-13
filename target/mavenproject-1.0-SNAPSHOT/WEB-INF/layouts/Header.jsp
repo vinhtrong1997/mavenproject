@@ -21,7 +21,7 @@
     </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-warning">
-    <a class="navbar-brand" href="/mavenproject">VN Post</a>
+    <a class="navbar-brand" href="/vnpost">VN Post</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

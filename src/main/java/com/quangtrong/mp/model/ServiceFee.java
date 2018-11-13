@@ -126,7 +126,7 @@ public class ServiceFee {
     }
     
     public void calTotalFee(){
-        totalFee = (serviceFee+scopeFee+shippingMethodFee)*weight;
+        totalFee = (serviceFee+scopeFee+shippingMethodFee)*(weight/100);
     }
     
     public float getTotalFee() {

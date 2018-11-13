@@ -9,6 +9,7 @@ import com.quangtrong.mp.DAO.ServiceDAO;
 import com.quangtrong.mp.model.NationalCity;
 import com.quangtrong.mp.model.PostOffice;
 import com.quangtrong.mp.model.Services;
+import com.quangtrong.mp.model.User;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
@@ -67,5 +68,19 @@ public class PostOfficeController {
         } catch (IOException ex) {
             Logger.getLogger(LocationController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    } 
+    }
+    
+    @RequestMapping(value="/managePostOffice",method=RequestMethod.GET)
+    public String managePO(Model model, HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("userSession");
+        if(user != null){
+            model.addAttribute("pageTitle","QL Bưu cục");
+            List<PostOffice> list = postOfficeDAO.listAllPO();
+            model.addAttribute("listPO", list);
+            return "managePostOffice";
+        }
+        else
+        return "redirect:/";
+    }
+    
 }

@@ -27,14 +27,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#" class="navbar-brand">Admin Management</a>
+                    <a href="dashboard" class="navbar-brand">Admin Management</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#"><c:out value="${pageTitle}"></c:out></a></li>
+                        <li class="active"><a href=""><c:out value="${pageTitle}"></c:out></a></li>
                         <li><a href="managePackage">QL Bưu phẩm</a></li>
-                        <li><a href="posts.html">QL Bưu Cục</a></li>
-                        <li><a href="users.html">QL User</a></li>
+                        <li><a href="">QL Bưu Cục</a></li>
+                        <li><a href="manageUsers">QL User</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -57,17 +57,7 @@
                         <h1><i class="fa fa-tachometer"></i></span> <c:out value="${pageTitle}"></c:out> <small>| Sức mạng từ niềm tin</small></h1>
                     </div>
                     <div class="col-md-2">
-                        <div class="dropdown create">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="create" data-toggle="dropdown">
-                                Công cụ
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="create">
-                                <li><a href="#">Thêm bưu gửi</a></li>
-                                <li><a href="#">Xuất hóa đơn</a></li>
-                                <li><a href="#"></a></li>
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

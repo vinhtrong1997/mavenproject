@@ -6,7 +6,6 @@
 <footer id="footer">
     <p>Copyright TrongNQ, &copy; 2017</p>
 </footer>
-    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-    <script src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="webjars/bootstrap/4.1.3/js/bootstrap.js"></script>
 </body>
 </html>

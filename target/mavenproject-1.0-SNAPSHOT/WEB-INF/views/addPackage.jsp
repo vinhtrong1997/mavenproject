@@ -41,7 +41,7 @@
                             <form class="" action="controlPackage" method="POST">
                                 <input type="hidden" name="control" value="addPackage" />
                                 <strong>Mã bưu phẩm: </strong>
-                                <input type="text" name="packageID" id ="packageID" value="${lastPackageID}">
+                                <input type="text" name="packageID" id ="packageID" value="${lastPackageID}" readonly>
                                 <br><br>
                                 <div class="form-group">
                                     <div class="row">
@@ -129,7 +129,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Tổng cước phí</label>
-                                                <input type="number" name="totalFee" id="totalFee"> VNĐ
+                                                <input type="number" name="totalFee" id="totalFee" readonly> VNĐ
                                             </div>
                                         </div>
                                     </div>
